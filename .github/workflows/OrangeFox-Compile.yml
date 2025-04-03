@@ -20,19 +20,19 @@ on:
       DEVICE_TREE:
         description: 'OrangeFox Device Tree'
         required: true
-        default: 'https://github.com/xoo2001/android_twrp_infinix_x6739'
+        default: 'https://github.com/hunter2986767/Device-tree-For-Infinix-zero-ultra-X6820-.git'
       DEVICE_TREE_BRANCH:
         description: 'OrangeFox Device Tree Branch'
         required: true
-        default: 'ofox'
+        default: 'main'
       DEVICE_PATH:
         description: 'Specify your Device Path'
         required: true
-        default: 'device/infinix/X6739'
+        default: 'device/infinix/X6820'
       DEVICE_NAME:
         description: 'Specify your Device Codename'
         required: true
-        default: 'X6739'
+        default: 'X6820'
       BUILD_TARGET:
         description: 'Specify your Build Target'
         required: true
