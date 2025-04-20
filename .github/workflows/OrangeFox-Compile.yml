@@ -20,7 +20,7 @@ on:
       DEVICE_TREE:
         description: 'OrangeFox Device Tree'
         required: true
-        default: 'https://github.com/hunter2986767/Device-tree-For-Infinix-zero-ultra-X6820-.git'
+        default: 'https://github.com/hunter2986767/X6820-DEVICE-TREE.git'
       DEVICE_TREE_BRANCH:
         description: 'OrangeFox Device Tree Branch'
         required: true
