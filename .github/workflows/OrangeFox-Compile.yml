@@ -89,6 +89,12 @@ jobs:
         cd ${{ github.event.inputs.DEVICE_PATH }}
         echo "COMMIT_ID=$(git rev-parse HEAD)" >> $GITHUB_ENV
 
+      - name: Remove duplicate ro.zygote entries
+  run: |
+    for file in $(find $GITHUB_WORKSPACE -name "*.prop"); do
+      awk '!a[$0]++' "$file" > temp.prop && mv temp.prop "$file"
+    done
+       
     - name: Building OrangeFox
       run: |
         cd ${GITHUB_WORKSPACE}/OrangeFox/fox_${{ github.event.inputs.MANIFEST_BRANCH }}
@@ -97,6 +103,8 @@ jobs:
         export ALLOW_MISSING_DEPENDENCIES=true
         set -e
         lunch twrp_${{ github.event.inputs.DEVICE_NAME }}-eng && make clean && mka adbd ${{ github.event.inputs.BUILD_TARGET }}image
+
+     
 
     - name: Set Release Properties
       run: |
