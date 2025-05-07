@@ -93,7 +93,7 @@ jobs:
   run: |
     for file in $(find $GITHUB_WORKSPACE -name "*.prop"); do
       awk '!a[$0]++' "$file" > temp.prop && mv temp.prop "$file"
-    done
+  
        
     - name: Building OrangeFox
       run: |
