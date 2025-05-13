@@ -91,6 +91,12 @@ jobs:
 
     - name: Clean Existing gflags folder
       run: rm -rf android-recovery/external/gflags
+
+    - name: Setup CCACHE
+      run: |
+       export USE_CCACHE=1
+        export CCACHE_DIR=$HOME/.ccache
+         mkdir -p $CCACHE_DIR  
        
     - name: Building OrangeFox
       run: |
