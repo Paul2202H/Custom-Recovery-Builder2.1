@@ -89,7 +89,8 @@ jobs:
         cd ${{ github.event.inputs.DEVICE_PATH }}
         echo "COMMIT_ID=$(git rev-parse HEAD)" >> $GITHUB_ENV
 
-    
+    - name: Clean Existing gflags folder
+      run: rm -rf android-recovery/external/gflags
        
     - name: Building OrangeFox
       run: |
