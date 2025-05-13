@@ -63,7 +63,10 @@ jobs:
       uses: pierotofy/set-swap-space@master
       with:
         swap-size-gb: 12
-
+        
+    - name: Install Dependencies
+      run: sudo apt-get update && sudo apt-get install -y ccache
+  
     - name: Build Environment
       run: |
         sudo apt install aria2 -y
